@@ -1,0 +1,72 @@
+/* Reset CSS */
+
+/* Box sizing rules */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, dl, figure, blockquote, fieldset, legend {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    font-size: 100%;
+}
+
+/* Remove list styles (bullets, numbers) */
+ul, ol {
+    list-style: none;
+}
+
+
+/* Remove default table spacing */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Remove border and padding on images */
+img {
+    border-style: none;
+    padding: 0;
+}
+
+/* Reset form elements */
+button, input, select, textarea {
+    margin: 1;
+    padding: 1;
+    border: 1;
+    outline: 1;
+    font-size: 100%;
+    vertical-align: baseline;
+    /*background: transparent;*/
+}
+
+/* Standardize button appearance */
+button {
+    cursor: pointer;
+}
+
+/* Remove default button styling in some browsers */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/* Remove default anchor styling */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Remove default button styling */
+button, input[type="button"], input[type="submit"], input[type="reset"] {
+    -webkit-appearance: button;
+    appearance: button;
+}
+
+/* Remove outline from focused elements */
+:focus {
+    outline: 0;
+}

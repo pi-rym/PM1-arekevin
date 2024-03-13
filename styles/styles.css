@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
+.madimi-one-regular {
+    font-family: "Madimi One", sans-serif;
+    font-weight: 40;
+    font-style: normal;
+  }
+body{
+    font-family: "Madimi One", sans-serif;
+    font-weight: 40;
+    color: rgb(8, 85, 68);
+    font-family: "Madimi One", sans-serif;
+    font-weight: 40;
+    font-style: normal;
+    margin: 1em;
+}
+
+p{
+    font-size: 14px;
+}
+h2{
+    font-size: 18px;
+}
+
+.head{
+    display: flex;
+    flex-direction: column;
+    color: #032f2f;
+    margin: auto;
+    width: 50vw;
+    align-items: center;
+}
+
+.logo{
+    width: 210px;
+}
+
+#container{
+    width: 85vw;
+    margin: auto;
+    display: flex;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+#form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+    margin-bottom: 2em; 
+    align-items: flex-start;
+    gap: 0.5em;
+}
+.cards{
+    font-size: 24px;
+    size: 100px;
+    background: rgb(226, 237, 237);
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    color: rgb(6, 39, 39);
+    align-items: center;
+    transition: all 1s;
+    border-radius: 50px;
+    margin: auto;
+}
+.cards:hover{
+    cursor: pointer;
+    border-radius: 6px;
+    transform: scale(0.9,0.9);
+    }
+.cards > h3{
+    opacity: 0;
+}
+.cards:hover > img{
+    opacity: 0;
+    transition: all 1s;
+}
+.cards:hover > h3{
+    opacity: 1;
+    transition: all 1s;
+}
+
+.activContainer
+{
+    background-color: aliceblue;
+}
