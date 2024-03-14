@@ -39,7 +39,8 @@ button, input, select, textarea {
     outline: 1;
     font-size: 100%;
     vertical-align: baseline;
-    /*background: transparent;*/
+    border-radius: 5px;
+    background: transparent;
 }
 
 /* Standardize button appearance */

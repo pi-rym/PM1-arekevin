@@ -21,6 +21,7 @@
                 <p>¡Hola! Mi nombre es Kevin Arévalo Desarrollador de Software Full Stack en Henry</p>
             </div>
         </section>
+<!--Tarjetas tecnologías-->
         <section>
             <h2>Mis Tecnologías Favoritas</h2>
             <div id="container">
@@ -43,25 +44,35 @@
             </div>
         </section>
         <section>
-            <form>
-                <h2>Mis Actividades Favoritas</h2>
-                <div id="form">
+<!--Form agregar actividades-->
+        <!-- <form> -->
+            <h2>Mis Actividades Favoritas</h2>
+            <div id="form">
 
-                    <input type="text" placeholder="Nombre Actividad" />
-                    <textarea name="Acttivity" cols="30" rows="5" placeholder="Describe la actividad">
-    </textarea>
-                    <input type="url" placeholder="Inserte Url de imagen" />
-                    <button type="submit">Agregar actividad</button>
-                </div>
-            </form>
-            <!---->
+                <input id='nameAct' type="text" placeholder="Nombre Actividad" />
+                <textarea id='descAct' name="Acttivity" cols="30" rows="5" placeholder="Describe la actividad"></textarea>
+                <input id='imgAct' type="url" placeholder="Inserte Url de imagen" />
+                <button id='addAct' onclick="testActivity()">Agregar actividad</button>
+            </div>
+        <!--</form>-->
+<!--Visualizar actividades-->
+            <h2>Actividades</h2>
             <div class="activContainer">
-                <div>
-                    <h3>primer actividad</h3>
+                <div class="activity">
+                    <h3>Pintar</h3>
+                    <img src="./Img/paint-brush.png" class="logo">
+                    <h4>Me encanta pintar cuadros en mi tiempo libre</h4>
+                </div>
+                <div class="activity">
+                    <h3>Leer</h3>
+                    <img src="./Img/books.png" class="logo">
+                    <h4>Me gusta leer novelas de ciencia ficción</h4>
                 </div>
             </div>
         </section>
     </main>
 </body>
+<script src="./scripts/index.js"> 
+</script>
 
 </html>
