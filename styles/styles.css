@@ -6,22 +6,23 @@
     font-style: normal;
   }
 body{
-    color: rgb(8, 85, 68);
+    color: #ffffff;
     font-family: "Madimi One", sans-serif;
     font-weight: 40;
     font-style: normal;
-    margin: 1em;
+    margin: 2em;
     margin-left: 2em;
+    background-color: #2b2a33;
 }
 
 p{
     font-family:'Raleway', sans-serif;
     font-weight: 500;
-    font-size: 14px;
-    color: rgb(60, 64, 61);
+    font-size: 18px;
+    color: rgb(222, 231, 224);
 }
 h2{
-    font-size: 18px;
+    font-size: 26px;
 }
 h4{
     font-family:'Raleway', sans-serif;
@@ -32,11 +33,24 @@ h4{
 .head{
     display: flex;
     flex-direction: column;
-    color: #032f2f;
+    color: rgb(109, 241, 211);
     margin: auto;
     width: 50vw;
     align-items: center;
     margin-bottom: 3em;
+}
+
+/* .box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+} */
+
+.formu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .logo{
@@ -44,9 +58,10 @@ h4{
 }
 
 #container{
-    width: 85vw;
+    width: 100%;
     margin: auto;
     display: flex;
+    align-items: flex-start;
     margin-top: 1em;
     margin-bottom: 2em;
 }
@@ -56,13 +71,13 @@ h4{
     flex-direction: column;
     margin-top: 1em;
     margin-bottom: 2em; 
-    align-items: flex-start;
+    align-items: center;
     gap: 0.5em;
 }
 .cards{
     font-size: 24px;
     size: 300px;
-    background: rgb(237, 243, 243);
+    background: #42414d;
     display: flex;
     flex-direction: column;
     /*width: fit-content;*/
@@ -71,14 +86,14 @@ h4{
     transition: all 1s;
     border-radius: 50px;
     margin: auto;
-    box-shadow: 0 2px 2px rgba(56, 58, 57, 0.4);
+    box-shadow: 0 2px 2px rgba(23, 24, 24, 0.4);
 }
 .cards:hover{
-    background-color: rgb(229, 237, 237);
-    border-radius: 6px;
+    border-radius: 15px;
     transform: scale(0.9,0.9);
-    color: rgb(34, 51, 47);
-    box-shadow: 0 5px 15px rgba(34, 37, 36, 0.4);
+    color: rgb(109, 241, 211);
+    background-color: #4d4d51;
+    box-shadow: 0 10px 15px rgba(34, 37, 36, 0.6);
     }
 .cards > h3{
     opacity: 0;
@@ -108,17 +123,34 @@ h4{
 .activity{
     font-size: 24px;
     size: 100px;
-    background: rgb(226, 237, 237);
+    background: #42414d;
     display: flex;
     flex-direction: column;
     width: 300px;
-    color: rgb(6, 39, 39);
     align-items: center;
-    transition: all 1s;
     border-radius: 50px;
     margin: 1em;
     padding: 1em;
+    position: relative;
+    transition: all 1s;
+    box-shadow: 0 5px 15px rgba(34, 37, 36, 0.6);
 }
 .activity:hover{
     transform: scale(0.9,0.9);
+    transition: all 1s;
+}
+.activity:hover > .deleteBtn{
+    opacity: 1;
+}
+
+.deleteBtn{
+position: absolute;
+width: 20px;
+align-content: end;
+top: 25px;
+right: 25px;
+opacity: 0;
+transition: all 1s;
+cursor: pointer;
+color: aqua;
 }

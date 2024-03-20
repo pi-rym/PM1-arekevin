@@ -1,72 +1,106 @@
-const input = document.querySelector('#nameAct');
-const description = document.querySelector('#descAct');
-const imgAct = document.querySelector('#imgAct');
-const add = document.querySelector('#addAct')
-const container = document.querySelector(".activContainer")
-
 class Activity {
-    constructor(id, title, description, imgUrl){
+    constructor(id, title, description, imgUrl) {
         this.id = id;
-        this.tilte = title;
+        this.title = title;
         this.description = description;
         this.imgUrl = imgUrl;
     }
 }
 
-class Repository{
-    constructor(){
-        this.activities=[];
-        this.id=0;    
+class Repository {
+    constructor() {
+        this.activities = [];
+        this.id = 0;
     }
-    getAllActivities(){
+    getAllActivities() {
         return this.activities;
     }
-    createActivity(tilte, description, imgUrl){
-        const id = this.id++;
-        const activity = new Activity (id, tilte, description, imgUrl)
+    createActivity(title, description, imgUrl) {
+        const idi = this.id++;
+        const activity = new Activity(idi, title, description, imgUrl)
         this.activities.push(activity)
     }
-    deleteActivity(id){
+    deleteActivity(id) {
+        id = parseInt(id);
+        this.activities = this.activities.filter(activity => activity.id !== id);
     }
 }
+
 const activs = new Repository();
 
-/* <div class="activity">
-    <h3>Pintar</h3>
-    <img src="./Img/paint-brush.png" class="logo">
-    <p>Me encanta pintar cuadros en mi tiempo libre</p>
-</div> */
+if(typeof document !== 'undefined'){
 
-for (activite in activs){
-    const div = document.createElement('div');
-    div.classList.add('activity');
-    const title = document.createElement('h3');
-    title.innerText= activite.tilte;
-    const img = document.createElement('img');
-    img.setAttribute = ('src', activite.imgUrl);
-    const descrip = document.createElement('p');
-    descrip.innerText = activite.description;
+    input = document.querySelector('#nameAct');
+    description = document.querySelector('#descAct');
+    imgAct = document.querySelector('#imgAct');
+    add = document.querySelector('#addAct')
+    container = document.querySelector(".activContainer")
+   
+    function vaciarTarjetas() {
+        const campos = document.querySelector(".activContainer").innerHTML = "";
+    }
+    
+    function handlerClick(evento) {
+        vaciarTarjetas();
+        evento.preventDefault();
+        if (!input.value || !description.value || !imgAct.value) {
+            alert("Por favor diligencie todos los campos")
+            return;
+        }
+        activs.createActivity(input.value, description.value, imgAct.value)
+        addActivityHtml();
+        input.value = "";
+        description.value = "";
+        imgAct.value = "";
+    }
+    const agregar = document.getElementById("addAct");
+agregar.addEventListener("click", handlerClick)
 
 }
-function testActivity(){
-    console.log("entra");
-    // activs.createActivity(input.value, description.value, imgAct.value);
-    // console.log(activs)
+
+
+function handlerDelete(event) {
+    const getId = event.target.id;
+    activs.deleteActivity(getId);
+    addActivityHtml();
+}
+
+function addActivityHtml() {
+    vaciarTarjetas();
+    const arrayHtml = activs.getAllActivities().map(scripToHtml)
+    arrayHtml.forEach(element => {
+        container.append(element);
+    });
+    return undefined;
+
+}
+
+function scripToHtml({id, title, description, imgUrl}){
     const cardDiv = document.createElement('div');
     cardDiv.classList.add('activity');
-    const title = document.createElement('h3');
-    title.innerText= "activite.tilte";
-    const img = document.createElement('img');
-    img.classList.add('logo');
-    img.setAttribute('src', 'https://cdn3d.iconscout.com/3d/premium/thumb/3-d-movie-4680526-3902087.png');
-    const descrip = document.createElement('p');
-    descrip.innerText = 'activite.description';
-    cardDiv.append(title);
-    cardDiv.append(img);
-    cardDiv.append(descrip);
-    container.append(cardDiv);
+
+    const titleAct = document.createElement('h3');
+    titleAct.innerText = title;
+
+    const imgAct = document.createElement('img');
+    imgAct.classList.add('logo');
+    imgAct.src = imgUrl;
+
+    const descripAct = document.createElement('p');
+    descripAct.innerText = description;
+
+    const borrar = document.createElement('img')
+    borrar.src = "./Img/cross.webp";
+    borrar.addEventListener('click', handlerDelete);
+    borrar.classList.add('deleteBtn');
+    borrar.title = "Eliminar actividad";
+    borrar.id = id;
+
+    cardDiv.append(titleAct, imgAct, descripAct, borrar);
+    return cardDiv;
 }
 
-
-
-//https://cdn3d.iconscout.com/3d/premium/thumb/3-d-movie-4680526-3902087.png
+module.exports={
+    Activity,
+    Repository,
+}

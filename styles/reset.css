@@ -32,26 +32,50 @@ img {
 }
 
 /* Reset form elements */
-button, input, select, textarea {
-    margin: 1;
-    padding: 1;
-    border: 1;
-    outline: 1;
+input, select, textarea {
+    /* margin: 1;
+    padding: 1;*/
+    outline: 5px; 
     font-size: 100%;
+    font-family: 'Canaro Medium', sans-serif;
     vertical-align: baseline;
     border-radius: 5px;
-    background: transparent;
+    color: #a5a5ab;
+    background-color: #42414d;
+    border: none;
+    width: 300px;
+    padding: 6px;
+}
+input :focus{
+    
+    outline: red dashed 5px;
 }
 
 /* Standardize button appearance */
 button {
     cursor: pointer;
+    outline: 5px; 
+    font-size: 100%;
+    font-family: 'Canaro Medium', sans-serif;
+    vertical-align: baseline;
+    border-radius: 5px;
+    color: #a5a5ab;
+    background-color: #42414d;
+    border: none;
+    padding: 9px;
+    box-shadow: 0 5px 15px rgba(34, 37, 36, 0.6);
+}
+
+button:hover{
+    background-color: #34333a;
+    transform: scale(0.95,0.95);
+    transition: all 1s;
 }
 
 /* Remove default button styling in some browsers */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-    border: 0;
+    border: 1;
     padding: 0;
 }
 
@@ -66,6 +90,7 @@ button, input[type="button"], input[type="submit"], input[type="reset"] {
     -webkit-appearance: button;
     appearance: button;
 }
+
 
 /* Remove outline from focused elements */
 :focus {

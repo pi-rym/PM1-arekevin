@@ -7,6 +7,7 @@
     <title>Document </title>
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -22,7 +23,7 @@
             </div>
         </section>
 <!--Tarjetas tecnologías-->
-        <section>
+        <section class="caja">
             <h2>Mis Tecnologías Favoritas</h2>
             <div id="container">
                 <div class="cards">
@@ -43,30 +44,23 @@
                 </div>
             </div>
         </section>
-        <section>
+        <section class="box">
 <!--Form agregar actividades-->
-        <!-- <form> -->
+        <form class="formu">
             <h2>Mis Actividades Favoritas</h2>
             <div id="form">
-
                 <input id='nameAct' type="text" placeholder="Nombre Actividad" />
                 <textarea id='descAct' name="Acttivity" cols="30" rows="5" placeholder="Describe la actividad"></textarea>
                 <input id='imgAct' type="url" placeholder="Inserte Url de imagen" />
-                <button id='addAct' onclick="testActivity()">Agregar actividad</button>
+                <button id='addAct'>Agregar actividad</button>
             </div>
-        <!--</form>-->
+        </form>
 <!--Visualizar actividades-->
             <h2>Actividades</h2>
             <div class="activContainer">
                 <div class="activity">
-                    <h3>Pintar</h3>
-                    <img src="./Img/paint-brush.png" class="logo">
-                    <h4>Me encanta pintar cuadros en mi tiempo libre</h4>
-                </div>
-                <div class="activity">
-                    <h3>Leer</h3>
-                    <img src="./Img/books.png" class="logo">
-                    <h4>Me gusta leer novelas de ciencia ficción</h4>
+                    <h3>¡Oops!</h3> 
+                    <p>Aún no se ha agregado ninguna actividad</p>
                 </div>
             </div>
         </section>
