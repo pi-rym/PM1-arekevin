@@ -16,9 +16,9 @@ class Repository {
         return this.activities;
     }
     createActivity(title, description, imgUrl) {
-        const idi = this.id++;
-        const activity = new Activity(idi, title, description, imgUrl)
-        this.activities.push(activity)
+        const id = this.id++;
+        const activity = new Activity(id, title, description, imgUrl);
+        this.activities.push(activity);
     }
     deleteActivity(id) {
         id = parseInt(id);
@@ -33,18 +33,17 @@ if(typeof document !== 'undefined'){
     input = document.querySelector('#nameAct');
     description = document.querySelector('#descAct');
     imgAct = document.querySelector('#imgAct');
-    add = document.querySelector('#addAct')
-    container = document.querySelector(".activContainer")
+    container = document.querySelector(".activContainer");
    
-    function vaciarTarjetas() {
-        const campos = document.querySelector(".activContainer").innerHTML = "";
-    }
-    
-    const agregar = document.getElementById("addAct");
-    agregar.addEventListener("click", handlerClick)
+    agregar = document.getElementById("addAct");
+    agregar.addEventListener("click", handlerClick);
 }
 
+function vaciarTarjetas() {
+    container.innerHTML = "";
+}
 
+//Acción del botón add
 function handlerClick(evento) {
     evento.preventDefault();
     if (!input.value || !description.value || !imgAct.value) {
@@ -52,13 +51,14 @@ function handlerClick(evento) {
         return;
     }
     vaciarTarjetas();
-    activs.createActivity(input.value, description.value, imgAct.value)
+    activs.createActivity(input.value, description.value, imgAct.value);
     addActivityHtml();
     input.value = "";
     description.value = "";
     imgAct.value = "";
 }
 
+//Acción del botón delete
 function handlerDelete(event) {
     const getId = event.target.id;
     activs.deleteActivity(getId);
@@ -67,14 +67,14 @@ function handlerDelete(event) {
 
 function addActivityHtml() {
     vaciarTarjetas();
-    const arrayHtml = activs.getAllActivities().map(scripToHtml)
+    const arrayHtml = activs.getAllActivities().map(scripToHtml);
     arrayHtml.forEach(element => {
         container.append(element);
     });
     return undefined;
 
 }
-
+//Tarjetas a Html
 function scripToHtml({id, title, description, imgUrl}){
     const cardDiv = document.createElement('div');
     cardDiv.classList.add('activity');
@@ -89,7 +89,7 @@ function scripToHtml({id, title, description, imgUrl}){
     const descripAct = document.createElement('p');
     descripAct.innerText = description;
 
-    const borrar = document.createElement('img')
+    const borrar = document.createElement('img');
     borrar.src = "./Img/cross.webp";
     borrar.addEventListener('click', handlerDelete);
     borrar.classList.add('deleteBtn');
