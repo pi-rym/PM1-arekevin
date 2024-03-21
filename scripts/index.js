@@ -40,24 +40,24 @@ if(typeof document !== 'undefined'){
         const campos = document.querySelector(".activContainer").innerHTML = "";
     }
     
-    function handlerClick(evento) {
-        vaciarTarjetas();
-        evento.preventDefault();
-        if (!input.value || !description.value || !imgAct.value) {
-            alert("Por favor diligencie todos los campos")
-            return;
-        }
-        activs.createActivity(input.value, description.value, imgAct.value)
-        addActivityHtml();
-        input.value = "";
-        description.value = "";
-        imgAct.value = "";
-    }
     const agregar = document.getElementById("addAct");
-agregar.addEventListener("click", handlerClick)
-
+    agregar.addEventListener("click", handlerClick)
 }
 
+
+function handlerClick(evento) {
+    evento.preventDefault();
+    if (!input.value || !description.value || !imgAct.value) {
+        alert("Por favor diligencie todos los campos")
+        return;
+    }
+    vaciarTarjetas();
+    activs.createActivity(input.value, description.value, imgAct.value)
+    addActivityHtml();
+    input.value = "";
+    description.value = "";
+    imgAct.value = "";
+}
 
 function handlerDelete(event) {
     const getId = event.target.id;

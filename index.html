@@ -11,19 +11,35 @@
 </head>
 
 <body>
-    <header>
-        <h1>Proyecto M1</h1>
+    <header class="header">
+        <h1>Proyecto M1 - Arekevin</h1>
+        <nav class="bar"> 
+            <li> 
+               <a href="#about">
+                   Sobre mí 
+               </a>
+            </li>
+            <li> 
+                <a href="#tecnologias">
+                    Tecnologías 
+                </a>
+             </li>
+             <li> 
+                <a href="#actividades">
+                    Actividades 
+                </a>
+             </li>
+        </nav>
     </header>
     <main>
-        <section>
-            <div class="head">
+        <!-- Sección Sobre mi -->
+        <section class="head" id="about">
                 <h2>Sobre Mi</h2>
                 <in />
                 <p>¡Hola! Mi nombre es Kevin Arévalo Desarrollador de Software Full Stack en Henry</p>
-            </div>
         </section>
-<!--Tarjetas tecnologías-->
-        <section class="caja">
+        <!--Sección tecnologías favoritas-->
+        <section class="caja" id="tecnologias">
             <h2>Mis Tecnologías Favoritas</h2>
             <div id="container">
                 <div class="cards">
@@ -44,29 +60,33 @@
                 </div>
             </div>
         </section>
-        <section class="box">
-<!--Form agregar actividades-->
-        <form class="formu">
-            <h2>Mis Actividades Favoritas</h2>
-            <div id="form">
-                <input id='nameAct' type="text" placeholder="Nombre Actividad" />
-                <textarea id='descAct' name="Acttivity" cols="30" rows="5" placeholder="Describe la actividad"></textarea>
-                <input id='imgAct' type="url" placeholder="Inserte Url de imagen" />
-                <button id='addAct'>Agregar actividad</button>
-            </div>
-        </form>
-<!--Visualizar actividades-->
-            <h2>Actividades</h2>
-            <div class="activContainer">
-                <div class="activity">
-                    <h3>¡Oops!</h3> 
-                    <p>Aún no se ha agregado ninguna actividad</p>
+        <!-- sección actividades favoritas -->
+        <section class="box" id="actividades">
+            <!--Form agregar actividades-->
+            <form class="formu">
+                <h2>Mis Actividades Favoritas</h2>
+                <div id="form">
+                    <input id='nameAct' type="text" placeholder="Nombre Actividad" />
+                    <textarea id='descAct' name="Acttivity" cols="30" rows="5"
+                        placeholder="Describe la actividad"></textarea>
+                    <input id='imgAct' type="url" placeholder="Inserte Url de imagen" />
+                    <button id='addAct'>Agregar actividad</button>
+                </div>
+            </form>
+            <!--Visualizar actividades-->
+            <div>
+                <h2>Actividades</h2>
+                <div class="activContainer">
+                    <div class="activity">
+                        <h3>¡Oops!</h3>
+                        <p>Aún no se ha agregado ninguna actividad</p>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 </body>
-<script src="./scripts/index.js"> 
+<script src="./scripts/index.js">
 </script>
 
 </html>

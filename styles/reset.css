@@ -33,8 +33,6 @@ img {
 
 /* Reset form elements */
 input, select, textarea {
-    /* margin: 1;
-    padding: 1;*/
     outline: 5px; 
     font-size: 100%;
     font-family: 'Canaro Medium', sans-serif;
@@ -45,10 +43,16 @@ input, select, textarea {
     border: none;
     width: 300px;
     padding: 6px;
+    box-shadow: 0 5px 15px rgba(34, 37, 36, 0.6);
 }
-input :focus{
-    
-    outline: red dashed 5px;
+input:focus {    
+    background-color: #2f2f35;;
+    box-shadow: inset 0 0 3px #c8bbbb1a;
+}
+
+textarea:focus {    
+    background-color: #2f2f35;;
+    box-shadow: inset 0 0 3px #c8bbbb1a;
 }
 
 /* Standardize button appearance */
